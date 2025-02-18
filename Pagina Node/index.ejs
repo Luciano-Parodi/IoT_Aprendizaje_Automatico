@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/table.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/layer.css">-->
+    <script src="js/fixed.js"></script>
+  </head>
+  <body>
+      
+      <div id="table_container">
+        <h2 id="title">Tabla de datos extraidos del sensor</h2>
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0" class="table-1">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>CO2</th>
+                <th>Temp</th>
+                <th>Humedad</th>
+                <th>Fecha</th>
+                <th>Lugar</th>
+                <th>Altura</th>
+                <th>Presion</th>
+                <th>Presion_nm</th>
+                <th>Temp_ext</td>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+        <!--Data Table-->
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0"  class="table-1">
+            <tbody id="data_table">
+
+            </tbody>
+              
+          </table>
+        <!--END Data Table-->
+      </div>
+
+  </body>
+  <script> 
+        /*
+        value.id  - value.co2 - value.temp  - value.hum - value.fecha
+        value.lugar - value.altura  - value.presion - value.presion_nm  - value.temp_ext
+        */    
+      $(document).ready(function () {
+        function showCollection() {
+          var id = this.value;
+          $("#data_table").html("");
+          $.ajax({
+            url: "http://localhost:3000/fetch",
+            type: "GET",
+            dataType: "json",
+            success: function (res) {
+              console.log(res);             
+              $.each(res.sensor, function (key, value) {
+                $("#data_table").append(
+                  '<tr><td>' + value.id + '</td><td>' + 
+                value.co2           + '</td><td>' +
+                value.temp	        + '</td><td>' +
+                value.hum	        + '</td><td>' +
+                value.fecha	        + '</td><td>' +
+                value.lugar	        + '</td><td>' +
+                value.altura	    + '</td><td>' +
+                value.presion	    + '</td><td>' +
+                value.presion_nm	+ '</td><td>' +
+                value.temp_ext      + "</td></tr>" 
+
+                );
+              });
+            },
+          });
+        }
+        showCollection();        
+      });
+  </script>
+
+</html>
