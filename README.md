@@ -1,4 +1,13 @@
 # IoT Aprendizaje Automático
+
+# Modelo Cliente-Servidor sin Control de Estado para Aprendizaje Profundo de Datos en Dispositivos IoT Aplicados a Parámetros Ambientales
+UCA - Facultad de Ingeniería y Ciencias Agrarias
+Ingeniería en Informática - Cátedra Protocolos de Internet
+
+Autores: Ing. Javier A. Ouret y Ing. Luciano Parodi
+Contacto: javierouret@uca.edu.ar - luciano.parodi97@gmail.com
+
+
 Gestión de Protocolos de Internet para  Aprendizaje Profundo de Datos en Dispositivos IoT Aplicados a Parámetros Ambientales
 
 La gestión de dispositivos interconectados por Internet requiere de múltiples niveles de abstracción en cuanto las aplicaciones y protocolos a utilizar. El número de dispositivos ha crecido exponencialmente en los últimos años forzando el desarrollo de nuevas arquitecturas para poder gestionar la operación y los datos adquiridos. Hasta hace poco tiempo los protocolos de gestión y aprovisionamiento como SNMP/Netconf/TR69 (para el monitoreo, configuración, actualizaciones de firmware, alarmas, etc.) estaban enfocados en dispositivos tradicionales como conmutadores (switches), ruteadores, módems, servidores. Con el incremento en el uso de dispositivos IoT (Internet of Things-Internet de las Cosas) el número de nodos a gestionar tuvo un aumento exponencial. La gestión ahora involucra también el acceso a datos sin control de estado bajo arquitecturas como REST. Por lo tanto el número presente de dispositivos requiere de técnicas, protocolos y lenguajes adecuados para cantidades masivas de recursos. En la gestión de la información la arquitectura cliente-servidor con control de estado y modelos de acceso de datos persistentes tiene que ser complementada con modelos sin control de estado, escalables como REST. El objetivo de este trabajo es investigar y proponer prácticas combinadas de gestión remota con el aprendizaje profundo de datos para cantidades masivas de dispositivos. Para demostrar los resultados se propone usar sensores de medio ambiente para la captura de datos (CO2, Humedad, Temperatura, etc.), accesibles por API  Rest, conectados a Internet, gestionados con SNMP/Netconf para el monitoreo/configuración de los dispositivos y la arquitectura REST con MQTT con modelos cliente servidor sin control de estado para las operaciones sobre los datos. A los efectos de evaluar los resultados los sensores registran las condiciones ambientales en espacios cerrados utilizados por personas (aulas, oficinas, hospitales, restaurants, cines), que calcularán el nivel de riesgo para la propagación de agentes patógenos. Estos sensores estarán conectados a gateways con acceso a Internet por fibra óptica y 4G/LTE/5G.
